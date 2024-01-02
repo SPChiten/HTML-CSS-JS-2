@@ -1,0 +1,123 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --main-color: #3498db;
+    --highlight-color: #2980b9;
+}
+
+.subjects-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.subject-tabs {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: right;
+    padding: 10px;
+}
+
+.subject-tab {
+    cursor: pointer;
+    padding: 10px;
+    color: var(--highlight-color);
+    background-color: none;
+    margin-right: 5px;
+    font-weight: bold;
+    font-size: larger;
+}
+
+.subject-tab:hover {
+    color: #ff6a00;
+    /* text-shadow: #ff6a00; */
+    font-weight: bold;
+}
+
+.subject-content-container {
+    display: flex;
+    flex: 1;
+}
+
+.subject-content {
+    flex: 1;
+    overflow: hidden;
+    padding: 20px;
+    box-sizing: border-box;
+    width: 100%;
+    display: none; /* Hide content by default */
+}
+
+.subject-content.active {
+    display: block;
+}
+
+.scroll-container {
+    overflow: hidden;
+    position: relative;
+}
+
+.scroll-wrapper {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%;
+}
+
+.scroll-page {
+    flex: 0 0 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    position: relative;
+    padding: 0 30px; /* Added padding to prevent arrow overflow */
+}
+
+.content-container {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0 20px; /* Adjust the padding value as needed */
+    box-sizing: border-box; /* Ensure padding is included in the width calculation */
+    position: relative; /* Establish positioning context for absolutely positioned arrows */
+}
+
+h1, h2 {
+    color: var(--main-color);
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-color);
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.arrow:hover {
+    background-color: var(--highlight-color);
+}
+
+.left-arrow {
+    left: 0;
+}
+
+.right-arrow {
+    right: 0;
+}
